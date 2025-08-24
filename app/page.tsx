@@ -5,7 +5,7 @@ import { Search, ArrowRight, Zap, TrendingUp, Users, Globe } from 'lucide-react'
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { AdBanner } from '@/components/ads/AdBanner';
+import { GAMBanner } from '@/components/ads/GAMBanner';
 import { useDomain } from '@/lib/hooks/useDomain';
 import { CATEGORIES } from '@/lib/config/tools';
 import Link from 'next/link';
@@ -53,8 +53,8 @@ export default function Home() {
     >
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 text-center">
-        {/* Ad Banner - Header */}
-        <AdBanner slot="header-banner" format="horizontal" className="mb-8" />
+        {/* GAM Banner - Header */}
+        <GAMBanner slotId="header-banner" className="mb-8" />
         
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
@@ -191,8 +191,8 @@ export default function Home() {
           
           {/* Sidebar */}
           <div className="w-full lg:w-72 space-y-6">
-            {/* Ad Banner - Sidebar */}
-            <AdBanner slot="sidebar-banner" format="rectangle" className="sticky top-20" />
+            {/* GAM Banner - Sidebar */}
+            <GAMBanner slotId="sidebar-rectangle" className="sticky top-20" />
           </div>
         </div>
       </section>
@@ -252,7 +252,7 @@ export default function Home() {
 
       {/* Inline Ad */}
       <section className="container mx-auto px-4 py-8">
-        <AdBanner slot="inline-banner" format="horizontal" responsive={true} />
+        <GAMBanner slotId="inline-responsive" />
       </section>
     </div>
   );

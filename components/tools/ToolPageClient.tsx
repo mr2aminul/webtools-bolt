@@ -14,6 +14,10 @@ import { PDFCompressorTool } from '@/components/tools/PDFCompressorTool';
 import { HTMLFormatterTool } from '@/components/tools/HTMLFormatterTool';
 import { CSSFormatterTool } from '@/components/tools/CSSFormatterTool';
 import { Base64EncoderTool } from '@/components/tools/Base64EncoderTool';
+import { EnhancedImageCropTool } from '@/components/tools/enhanced/EnhancedImageCropTool';
+import { EnhancedPDFSplitTool } from '@/components/tools/enhanced/EnhancedPDFSplitTool';
+import { EnhancedCodeFormatterTool } from '@/components/tools/enhanced/EnhancedCodeFormatterTool';
+import { EnhancedQRGeneratorTool } from '@/components/tools/enhanced/EnhancedQRGeneratorTool';
 import { AdBanner } from '@/components/ads/AdBanner';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -39,9 +43,9 @@ export function ToolPageClient({ tool }: ToolPageClientProps) {
   const renderTool = () => {
     switch (tool.slug) {
       case 'json-formatter':
-        return <JsonFormatterTool />;
+        return <EnhancedCodeFormatterTool />;
       case 'qr-generator':
-        return <QRGeneratorTool />;
+        return <EnhancedQRGeneratorTool />;
       case 'resize-image':
         return <ImageResizerTool />;
       case 'merge-pdf':
@@ -51,9 +55,9 @@ export function ToolPageClient({ tool }: ToolPageClientProps) {
       case 'convert-image':
         return <ImageConverterTool />;
       case 'crop-image':
-        return <ImageCropperTool />;
+        return <EnhancedImageCropTool />;
       case 'split-pdf':
-        return <PDFSplitterTool />;
+        return <EnhancedPDFSplitTool />;
       case 'compress-pdf':
         return <PDFCompressorTool />;
       case 'html-formatter':

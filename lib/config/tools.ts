@@ -224,6 +224,54 @@ export const TOOLS: Tool[] = [
     category: 'code',
     icon: '🔍'
   },
+  {
+    id: 'xml-formatter',
+    slug: 'xml-formatter',
+    title: 'XML Formatter',
+    description: 'Format and beautify XML documents',
+    category: 'code',
+    icon: '📄'
+  },
+  {
+    id: 'yaml-formatter',
+    slug: 'yaml-formatter',
+    title: 'YAML Formatter',
+    description: 'Format and validate YAML files',
+    category: 'code',
+    icon: '📋'
+  },
+  {
+    id: 'sql-formatter',
+    slug: 'sql-formatter',
+    title: 'SQL Formatter',
+    description: 'Format and beautify SQL queries',
+    category: 'code',
+    icon: '🗃️'
+  },
+  {
+    id: 'markdown-editor',
+    slug: 'markdown-editor',
+    title: 'Markdown Editor',
+    description: 'Edit and preview Markdown documents',
+    category: 'code',
+    icon: '📝'
+  },
+  {
+    id: 'hash-generator',
+    slug: 'hash-generator',
+    title: 'Hash Generator',
+    description: 'Generate MD5, SHA1, SHA256 hashes',
+    category: 'code',
+    icon: '#️⃣'
+  },
+  {
+    id: 'password-generator',
+    slug: 'password-generator',
+    title: 'Password Generator',
+    description: 'Generate secure passwords with custom options',
+    category: 'code',
+    icon: '🔐'
+  },
 
   // SEO Tools
   {
@@ -267,6 +315,30 @@ export const TOOLS: Tool[] = [
     category: 'seo',
     icon: '📊'
   },
+  {
+    id: 'backlink-checker',
+    slug: 'backlink-checker',
+    title: 'Backlink Checker',
+    description: 'Analyze website backlinks and authority',
+    category: 'seo',
+    icon: '🔗'
+  },
+  {
+    id: 'page-speed-test',
+    slug: 'page-speed-test',
+    title: 'Page Speed Test',
+    description: 'Test website loading speed and performance',
+    category: 'seo',
+    icon: '⚡'
+  },
+  {
+    id: 'broken-link-checker',
+    slug: 'broken-link-checker',
+    title: 'Broken Link Checker',
+    description: 'Find and fix broken links on websites',
+    category: 'seo',
+    icon: '🔍'
+  },
 
   // Network Tools
   {
@@ -298,6 +370,30 @@ export const TOOLS: Tool[] = [
     slug: 'dns-lookup',
     title: 'DNS Lookup',
     description: 'Perform DNS queries and domain analysis',
+    category: 'network',
+    icon: '🔍'
+  },
+  {
+    id: 'port-scanner',
+    slug: 'port-scanner',
+    title: 'Port Scanner',
+    description: 'Scan open ports on servers and networks',
+    category: 'network',
+    icon: '🔌'
+  },
+  {
+    id: 'ping-test',
+    slug: 'ping-test',
+    title: 'Ping Test',
+    description: 'Test network connectivity and latency',
+    category: 'network',
+    icon: '📡'
+  },
+  {
+    id: 'whois-lookup',
+    slug: 'whois-lookup',
+    title: 'WHOIS Lookup',
+    description: 'Get domain registration information',
     category: 'network',
     icon: '🔍'
   },
@@ -351,6 +447,210 @@ export const TOOLS: Tool[] = [
     description: 'Convert text between different cases',
     category: 'utilities',
     icon: 'Aa'
+  }
+  {
+    id: 'qr-scanner',
+    slug: 'qr-scanner',
+    title: 'QR Code Scanner',
+    description: 'Scan QR codes from images or webcam',
+    category: 'qr',
+    icon: '📷'
+  },
+  {
+    id: 'barcode-generator',
+    slug: 'barcode-generator',
+    title: 'Barcode Generator',
+    description: 'Generate various barcode formats',
+    category: 'qr',
+    icon: '📊'
+  },
+  {
+    id: 'bulk-qr-generator',
+    slug: 'bulk-qr-generator',
+    title: 'Bulk QR Generator',
+    description: 'Generate multiple QR codes from CSV',
+    category: 'qr',
+    icon: '📋'
+  },
+  {
+    id: 'vcard-qr',
+    slug: 'vcard-qr',
+    title: 'vCard QR Generator',
+    description: 'Create QR codes for contact information',
+    category: 'qr',
+    icon: '👤'
+  },
+  {
+    id: 'wifi-qr',
+    slug: 'wifi-qr',
+    title: 'WiFi QR Generator',
+    description: 'Generate QR codes for WiFi networks',
+    category: 'qr',
+    icon: '📶'
+  },
+  {
+    id: 'pdf-to-word',
+    slug: 'pdf-to-word',
+    title: 'PDF to Word',
+    description: 'Convert PDF documents to Word format',
+    category: 'pdf',
+    icon: '📄'
+  },
+  {
+    id: 'pdf-to-excel',
+    slug: 'pdf-to-excel',
+    title: 'PDF to Excel',
+    description: 'Convert PDF tables to Excel spreadsheets',
+    category: 'pdf',
+    icon: '📊'
+  },
+  {
+    id: 'pdf-to-powerpoint',
+    slug: 'pdf-to-powerpoint',
+    title: 'PDF to PowerPoint',
+    description: 'Convert PDF to PowerPoint presentations',
+    category: 'pdf',
+    icon: '📽️'
+  },
+  {
+    id: 'word-to-pdf',
+    slug: 'word-to-pdf',
+    title: 'Word to PDF',
+    description: 'Convert Word documents to PDF format',
+    category: 'pdf',
+    icon: '📄'
+  },
+  {
+    id: 'excel-to-pdf',
+    slug: 'excel-to-pdf',
+    title: 'Excel to PDF',
+    description: 'Convert Excel spreadsheets to PDF',
+    category: 'pdf',
+    icon: '📊'
+  },
+  {
+    id: 'powerpoint-to-pdf',
+    slug: 'powerpoint-to-pdf',
+    title: 'PowerPoint to PDF',
+    description: 'Convert PowerPoint presentations to PDF',
+    category: 'pdf',
+    icon: '📽️'
+  },
+  {
+    id: 'add-page-numbers',
+    slug: 'add-page-numbers',
+    title: 'Add Page Numbers',
+    description: 'Add page numbers to PDF documents',
+    category: 'pdf',
+    icon: '🔢'
+  },
+  {
+    id: 'remove-pages',
+    slug: 'remove-pages',
+    title: 'Remove PDF Pages',
+    description: 'Delete specific pages from PDF documents',
+    category: 'pdf',
+    icon: '🗑️'
+  },
+  {
+    id: 'extract-pages',
+    slug: 'extract-pages',
+    title: 'Extract PDF Pages',
+    description: 'Extract specific pages from PDF documents',
+    category: 'pdf',
+    icon: '📄'
+  },
+  {
+    id: 'pdf-ocr',
+    slug: 'pdf-ocr',
+    title: 'PDF OCR',
+    description: 'Extract text from scanned PDF documents',
+    category: 'pdf',
+    icon: '👁️'
+  },
+  {
+    id: 'add-watermark',
+    slug: 'add-watermark',
+    title: 'Add Watermark',
+    description: 'Add text or image watermarks to images',
+    category: 'image',
+    icon: '©️',
+    bulkSupport: true
+  },
+  {
+    id: 'remove-background',
+    slug: 'remove-background',
+    title: 'Remove Background',
+    description: 'Remove background from images automatically',
+    category: 'image',
+    icon: '🎭',
+    bulkSupport: true
+  },
+  {
+    id: 'image-filters',
+    slug: 'image-filters',
+    title: 'Image Filters',
+    description: 'Apply filters and effects to images',
+    category: 'image',
+    icon: '🎨',
+    bulkSupport: true
+  },
+  {
+    id: 'photo-editor',
+    slug: 'photo-editor',
+    title: 'Photo Editor',
+    description: 'Advanced photo editing with layers',
+    category: 'image',
+    icon: '🖼️'
+  },
+  {
+    id: 'image-upscaler',
+    slug: 'image-upscaler',
+    title: 'Image Upscaler',
+    description: 'Enhance and upscale image resolution',
+    category: 'image',
+    icon: '⬆️',
+    bulkSupport: true
+  },
+  {
+    id: 'gif-maker',
+    slug: 'gif-maker',
+    title: 'GIF Maker',
+    description: 'Create animated GIFs from images or videos',
+    category: 'image',
+    icon: '🎬'
+  },
+  {
+    id: 'meme-generator',
+    slug: 'meme-generator',
+    title: 'Meme Generator',
+    description: 'Create memes with text overlays',
+    category: 'image',
+    icon: '😂'
+  },
+  {
+    id: 'collage-maker',
+    slug: 'collage-maker',
+    title: 'Collage Maker',
+    description: 'Create photo collages and layouts',
+    category: 'image',
+    icon: '🖼️'
+  },
+  {
+    id: 'screenshot-tool',
+    slug: 'screenshot-tool',
+    title: 'Screenshot Tool',
+    description: 'Capture and edit screenshots',
+    category: 'image',
+    icon: '📸'
+  },
+  {
+    id: 'image-to-text',
+    slug: 'image-to-text',
+    title: 'Image to Text (OCR)',
+    description: 'Extract text from images using OCR',
+    category: 'image',
+    icon: '📝'
   }
 ];
 
