@@ -2,11 +2,11 @@
 
 import { useDomain } from '@/lib/hooks/useDomain';
 import { Tool } from '@/lib/config/tools';
-import { JsonFormatterTool } from '@/components/tools/JsonFormatterTool';
-import { QRGeneratorTool } from '@/components/tools/QRGeneratorTool';
+import { JSONFormatterTool } from '@/components/tools/production/JSONFormatterTool';
+import { QRGeneratorTool } from '@/components/tools/production/QRGeneratorTool';
 import { ImageResizerTool } from '@/components/tools/ImageResizerTool';
-import { PDFMergerTool } from '@/components/tools/PDFMergerTool';
-import { ImageCompressorTool } from '@/components/tools/ImageCompressorTool';
+import { PDFMergerTool } from '@/components/tools/production/PDFMergerTool';
+import { ImageCompressorTool } from '@/components/tools/production/ImageCompressorTool';
 import { ImageConverterTool } from '@/components/tools/ImageConverterTool';
 import { ImageCropperTool } from '@/components/tools/ImageCropperTool';
 import { PDFSplitterTool } from '@/components/tools/PDFSplitterTool';
@@ -14,10 +14,6 @@ import { PDFCompressorTool } from '@/components/tools/PDFCompressorTool';
 import { HTMLFormatterTool } from '@/components/tools/HTMLFormatterTool';
 import { CSSFormatterTool } from '@/components/tools/CSSFormatterTool';
 import { Base64EncoderTool } from '@/components/tools/Base64EncoderTool';
-import { EnhancedImageCropTool } from '@/components/tools/enhanced/EnhancedImageCropTool';
-import { EnhancedPDFSplitTool } from '@/components/tools/enhanced/EnhancedPDFSplitTool';
-import { EnhancedCodeFormatterTool } from '@/components/tools/enhanced/EnhancedCodeFormatterTool';
-import { EnhancedQRGeneratorTool } from '@/components/tools/enhanced/EnhancedQRGeneratorTool';
 import { AdBanner } from '@/components/ads/AdBanner';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -43,9 +39,9 @@ export function ToolPageClient({ tool }: ToolPageClientProps) {
   const renderTool = () => {
     switch (tool.slug) {
       case 'json-formatter':
-        return <EnhancedCodeFormatterTool />;
+        return <JSONFormatterTool />;
       case 'qr-generator':
-        return <EnhancedQRGeneratorTool />;
+        return <QRGeneratorTool />;
       case 'resize-image':
         return <ImageResizerTool />;
       case 'merge-pdf':
@@ -55,9 +51,9 @@ export function ToolPageClient({ tool }: ToolPageClientProps) {
       case 'convert-image':
         return <ImageConverterTool />;
       case 'crop-image':
-        return <EnhancedImageCropTool />;
+        return <ImageCropperTool />;
       case 'split-pdf':
-        return <EnhancedPDFSplitTool />;
+        return <PDFSplitterTool />;
       case 'compress-pdf':
         return <PDFCompressorTool />;
       case 'html-formatter':
