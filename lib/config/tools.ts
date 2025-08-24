@@ -447,7 +447,7 @@ export const TOOLS: Tool[] = [
     description: 'Convert text between different cases',
     category: 'utilities',
     icon: 'Aa'
-  }
+  },
   {
     id: 'qr-scanner',
     slug: 'qr-scanner',
