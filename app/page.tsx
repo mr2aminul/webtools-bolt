@@ -80,11 +80,7 @@ export default function Home() {
               placeholder="Search for tools..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 h-12 text-lg bg-white/80 backdrop-blur-sm border-gray-200"
-              style={{
-                focusBorderColor: domainConfig.primaryColor,
-                focusRingColor: domainConfig.primaryColor
-              }}
+              className="pl-10 h-12 text-lg bg-white/80 backdrop-blur-sm border-gray-200 focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
 
@@ -147,42 +143,40 @@ export default function Home() {
               </div>
             ) : (
               /* Category Grid */
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {Object.entries(categorizedTools).map(([categoryId, category]) => (
-                  <Card key={categoryId} className="group bg-white/80 backdrop-blur-sm border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <Card key={categoryId} className="group bg-white border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg">
                     <CardHeader className="pb-4">
-                      <div className="flex items-center space-x-3 mb-3">
+                      <div className="text-center mb-4">
                         <div 
-                          className={`p-3 bg-gradient-to-r ${category.color} rounded-lg group-hover:scale-110 transition-transform duration-300`}
+                          className={`w-16 h-16 mx-auto mb-3 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
                         >
-                          <span className="text-white text-xl">{category.icon}</span>
+                          <span className="text-white text-2xl">{category.icon}</span>
                         </div>
-                        <div>
-                          <CardTitle className="text-xl text-gray-800">{category.name}</CardTitle>
-                          <CardDescription className="text-gray-600">
-                            {category.description}
-                          </CardDescription>
-                        </div>
+                        <CardTitle className="text-lg text-gray-800 text-center">{category.name}</CardTitle>
+                        <CardDescription className="text-gray-600 text-center text-sm">
+                          {category.description}
+                        </CardDescription>
                       </div>
                       
                       {/* Tool List */}
-                      <div className="space-y-2">
-                        {category.tools.slice(0, 6).map((tool: any) => (
+                      <div className="space-y-1">
+                        {category.tools.slice(0, 4).map((tool: any) => (
                           <Link key={tool.id} href={`/${tool.slug}`}>
-                            <div className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 transition-colors group/tool">
-                              <span className="text-sm text-gray-700 group-hover/tool:text-blue-600 transition-colors">
+                            <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50 transition-colors group/tool">
+                              <span className="text-xs text-gray-700 group-hover/tool:text-blue-600 transition-colors">
                                 {tool.title}
                               </span>
-                              <ArrowRight className="h-4 w-4 text-gray-400 group-hover/tool:text-blue-600 group-hover/tool:translate-x-1 transition-all duration-200" />
+                              <ArrowRight className="h-3 w-3 text-gray-400 group-hover/tool:text-blue-600 group-hover/tool:translate-x-1 transition-all duration-200" />
                             </div>
                           </Link>
                         ))}
                         
-                        {category.tools.length > 6 && (
+                        {category.tools.length > 4 && (
                           <Link href={`/category/${categoryId}`}>
-                            <div className="flex items-center justify-center p-2 rounded-lg hover:bg-gray-50 transition-colors text-blue-600 hover:text-blue-700">
-                              <span className="text-sm font-medium">
-                                View all {category.tools.length} tools
+                            <div className="flex items-center justify-center p-2 rounded hover:bg-gray-50 transition-colors text-blue-600 hover:text-blue-700">
+                              <span className="text-xs font-medium">
+                                +{category.tools.length - 4} more tools
                               </span>
                             </div>
                           </Link>
@@ -196,7 +190,7 @@ export default function Home() {
           </div>
           
           {/* Sidebar */}
-          <div className="w-full lg:w-80 space-y-6">
+          <div className="w-full lg:w-72 space-y-6">
             {/* Ad Banner - Sidebar */}
             <AdBanner slot="sidebar-banner" format="rectangle" className="sticky top-20" />
           </div>
