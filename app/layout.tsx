@@ -5,6 +5,7 @@ import Script from 'next/script';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from 'react-hot-toast';
+import GAMScript from '@/components/layout/GAMScript';
 import { initializeGAM } from '@/lib/config/gam';
 import { useEffect } from 'react';
 
@@ -30,15 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script
-          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-          strategy="afterInteractive"
-          onLoad={() => {
-            if (typeof window !== 'undefined') {
-              initializeGAM();
-            }
-          }}
-        />
+            <GAMScript />
       </head>
       <body className={inter.className}>
         <div className="min-h-screen flex flex-col">
